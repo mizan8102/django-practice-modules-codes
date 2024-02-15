@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content%}
+{% load crispy_forms_tags %}
+<h1 class="text-center border-b-2">Add Student</h1>
+<div style="width: 50%; margin: auto">
+  <form method="post">
+    {{form|crispy}}
+    <!-- <button class = "btn btn-primary" type = "submit"></button> -->
+    <input class="btn btn-primary" type="submit" value="Submit" />
+  </form>
+</div>
+
+{% endblock%}
