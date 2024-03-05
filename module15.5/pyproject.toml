@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "module15-5"
+version = "0.1.0"
+description = ""
+authors = ["mizan8102 <mizan.prog@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "module15"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.2"
+django-crispy-forms = "^2.1"
+crispy-bootstrap5 = "^2023.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
