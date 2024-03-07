@@ -5,32 +5,35 @@
   <table class="table table-striped">
     <thead class="thead-dark bg-primary text-light">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Full Name</th>
-     
+        <th scope="col">ID</th>
+        <th scope="col">Musician Name</th>
         <th scope="col">Email</th>
-        <th scope="col">Phone Number</th>
+        <th scope="col">Album Rating</th>
         <th scope="col">Instrument Type</th>
+        <th scope="col">Album Name </th>
+        <th scope="col">Release Date</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
-    {% comment %} <tbody>
+    <tbody>
       {% for item in  data %}
       <tr>
-        <th scope="row">{{ forloop.counter }}</th>
-        <td>{{ item.first_name|add:" "|add:item.last_name }}</td>
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.musician.first_name|add:" "|add:item.musician.last_name }}</td>
 
-        <td>{{ item.email }}</td>
-        <td>{{ item.phone_number }}</td>
-        <td>{{ item.instrument_type }}</td>
+        <td>{{ item.musician.email }}</td>
+        <td>{{ item.rating }}</td>
+        <td>{{ item.musician.instrument_type }}</td>
+        <td>{{ item.album_name }}</td>
+        <td>{{ item.album_release_date| date:"j F Y" }}</td>
         <td>
-           <a href="{% url "editMusician" item.id %}" class="btn btn-primary btn-sm">Edit</a>
-            <a href="{% url "deleteMusician" item.id %}" class="btn btn-danger btn-sm">Delete</a>
+           <a href="{% url "edit_album" item.id %}" class="btn btn-primary btn-sm">Edit</a>
+            <a href="{% url "delete_album" item.id %}" class="btn btn-danger btn-sm">Delete</a>
         </td>
 
       </tr>
       {% endfor %}
-    </tbody> {% endcomment %}
+    </tbody>
   </table>
 </div>
 {% endblock %}

@@ -23,6 +23,7 @@ def editMusician(request, id):
         form = MusicianForm(request.POST, instance=musician)
         if form.is_valid():
             form.save()
+            return redirect('view_musician_list')
     else:
         form = MusicianForm(instance=musician)
     return render(request, 'musician/add_musician.html', {'form': form})
